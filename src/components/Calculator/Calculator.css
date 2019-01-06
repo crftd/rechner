@@ -1,0 +1,13 @@
+.calculator {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.calculator__title {
+  font-family: 'Major Mono Display', monospace;
+  color: #f67866;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 80px;
+}

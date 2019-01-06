@@ -1,13 +1,14 @@
 .main-wrapper {
   background-color: #61dafb;
+  height: 100vh;
   width: 62%;
+  padding-top: 20%;
+  float: left;
 }
 
-.calculator__title {
-  font-family: 'Major Mono Display', monospace;
-  color: #F67866;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 80px;
+.sidebar-wrapper {
+  background-color: #f67866;
+  height: 100vh;
+  width: 38%;
+  display: inline-block;
 }
