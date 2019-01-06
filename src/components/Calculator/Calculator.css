@@ -1,5 +1,5 @@
 .calculator {
-  width: 500px;
+  width: 452px;
   margin: 0 auto;
 }
 
@@ -10,4 +10,28 @@
   font-weight: normal;
   line-height: normal;
   font-size: 80px;
+  margin-bottom: 75px;
+}
+
+.calculator__form-input__half {
+  display: inline-block;
+  width: 47%;
+  margin-right: 6%;
+}
+
+.calculator__form-input__half:last-child {
+  margin: 0;
+}
+
+.calculator__input {
+  width: 100%;
+}
+
+.calculator__form-buttons {
+  margin-top: 16px;
+}
+
+.button {
+  width: 100%;
+  height: 55px;
 }
