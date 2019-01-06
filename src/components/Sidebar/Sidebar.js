@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+
 import './Sidebar.css';
+import Bookmark from './icons/bookmark.svg';
+import ShareSvg from './icons/share.svg';
+import GitHubSvg from './icons/github.svg';
 
 class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <h1 className="sidebar__title">Zhopa</h1>
-        <a className="sidebar__link" href="#1">AddToBookMarks</a>
-        <a className="sidebar__link" href="#1">Share</a>
-        <a className="sidebar__link" href="https://github.com/crftd/rechner">GitHub</a>
+        <div className="sidebar__icons">
+          <a className="sidebar__link" href="https://github.com/crftd/rechner">
+            <img className="sidebar__icon" src={GitHubSvg} alt="GitHub icon"/>
+          </a>
+          <img className="sidebar__icon" src={ShareSvg} alt="Share icon"/>
+          <img className="sidebar__icon" src={Bookmark} alt="Bookmark icon"/>
+        </div>
       </div>
     );
   }

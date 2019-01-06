@@ -1,4 +1,10 @@
-.sidebar__title {
-  font-weight: bold;
-  color: #61dafb;
+.sidebar {
+  padding: 30px;
+}
+
+.sidebar__icon {
+  float: right;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
 }
