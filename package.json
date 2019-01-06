@@ -16,7 +16,10 @@
     "eject": "react-scripts eject",
     "lint:js": "eslint ./src",
     "lint:css": "stylelint './src/**/*.css'",
-    "lint": "yarn lint:js && yarn lint:css"
+    "lint": "yarn lint:js && yarn lint:css",
+    "deploy:major": "yarn versions --major && git push --follow-tags",
+    "deploy:minor": "yarn versions --minor && git push --follow-tags",
+    "deploy:patch": "yarn versions --patch && git push --follow-tags"
   },
   "browserslist": [
     ">0.2%",
