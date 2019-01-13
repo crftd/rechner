@@ -1,52 +1,16 @@
-import CidrCalculator, { OUT_OF_RANGE_ERROR_MESSAGE } from '../CidrCalculator';
+class Mask {}
 
 describe('CidrCalculator', () => {
-  test('convertToOctet - 1', () => {
+  test('getMask', () => {
     // Arrange
+    const mockMask = Mask;
+    jest.mock('../Mask', () => mockMask);
+    const CidrCalculator = require('../CidrCalculator').default;
     const cidrCalculator = new CidrCalculator();
-    const expectedNumber = 1;
-    const expectedOctet = '00000001';
+    const expectedBitAmount = 24;
     // Act
-    const actualOctet = cidrCalculator.convertToOctet(expectedNumber);
+    cidrCalculator.getMask(expectedBitAmount);
     // Assert
-    expect(actualOctet).toEqual(expectedOctet);
-  });
-
-  test('convertToOctet - 193', () => {
-    // Arrange
-    const cidrCalculator = new CidrCalculator();
-    const expectedNumber = 193;
-    const expectedOctet = '11000001';
-    // Act
-    const actualOctet = cidrCalculator.convertToOctet(expectedNumber);
-    // Assert
-    expect(actualOctet).toEqual(expectedOctet);
-  });
-
-  test('convertToOctet - 256', () => {
-    // Arrange
-    const cidrCalculator = new CidrCalculator();
-    const expectedNumber = 256;
-    const expectedErrorMessage = OUT_OF_RANGE_ERROR_MESSAGE;
-    // Act
-    function convertToOctetOutOfRange() {
-      cidrCalculator.convertToOctet(expectedNumber);
-    }
-    // Assert
-    expect(convertToOctetOutOfRange).toThrow(expectedErrorMessage);
-  });
-
-
-  test('convertToOctet - -1', () => {
-    // Arrange
-    const cidrCalculator = new CidrCalculator();
-    const expectedNumber = -1;
-    const expectedErrorMessage = OUT_OF_RANGE_ERROR_MESSAGE;
-    // Act
-    function convertToOctetOutOfRange() {
-      cidrCalculator.convertToOctet(expectedNumber);
-    }
-    // Assert
-    expect(convertToOctetOutOfRange).toThrow(expectedErrorMessage);
+    expect(cidrCalculator.mask).toBeInstanceOf(Mask);
   });
 });
