@@ -1,4 +1,5 @@
-import IP, { OUT_OF_RANGE_ERROR_MESSAGE } from '../IP';
+import IP from '../IP';
+import { OUT_OF_RANGE_ERROR_MESSAGE } from '../constans';
 
 describe('IP', () => {
   test('constructor', () => {

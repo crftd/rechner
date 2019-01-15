@@ -1,5 +1,6 @@
+import { OUT_OF_RANGE_ERROR_MESSAGE } from './constans';
+
 const DIGIT_AMOUNT = 8;
-export const OUT_OF_RANGE_ERROR_MESSAGE = 'Out of Range(';
 
 export default class IP {
   constructor(decimalIp) {
