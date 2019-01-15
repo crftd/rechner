@@ -9,10 +9,10 @@ class App extends Component {
     return (
       <div className="wrapper">
         <main className="main-wrapper">
-          <Calculator/>
+          <Calculator />
         </main>
         <header className="sidebar-wrapper">
-          <Sidebar/>
+          <Sidebar />
         </header>
       </div>
     );

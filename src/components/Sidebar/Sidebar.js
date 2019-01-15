@@ -11,10 +11,10 @@ class Sidebar extends Component {
       <div className="sidebar">
         <div className="sidebar__icons">
           <a className="sidebar__link" href="https://github.com/crftd/rechner">
-            <img className="sidebar__icon" src={GitHubSvg} alt="GitHub icon"/>
+            <img className="sidebar__icon" src={GitHubSvg} alt="GitHub icon" />
           </a>
-          <img className="sidebar__icon" src={ShareSvg} alt="Share icon"/>
-          <img className="sidebar__icon" src={Bookmark} alt="Bookmark icon"/>
+          <img className="sidebar__icon" src={ShareSvg} alt="Share icon" />
+          <img className="sidebar__icon" src={Bookmark} alt="Bookmark icon" />
         </div>
       </div>
     );

@@ -31,46 +31,23 @@ class Calculator extends Component {
         <div className="calculator">
           <form className="calculator__form">
             <h1 className="calculator__title">Rechner.</h1>
-            <TextField
-              className="calculator__input"
-              variant="filled"
-              margin="normal"
-              label="CIDR"
-            />
+            <TextField className="calculator__input" variant="filled" margin="normal" label="CIDR" />
             <div className="calculator__form-fieldset">
               <div className="calculator__form-input__half">
-                <TextField
-                  className="calculator__input"
-                  variant="filled"
-                  margin="normal"
-                  label="IP from"
-                />
+                <TextField className="calculator__input" variant="filled" margin="normal" label="IP from" />
               </div>
               <div className="calculator__form-input__half">
-                <TextField
-                  className="calculator__input"
-                  variant="filled"
-                  margin="normal"
-                  label="IP to"
-                />
+                <TextField className="calculator__input" variant="filled" margin="normal" label="IP to" />
               </div>
             </div>
             <div className="calculator__form-buttons">
               <div className="calculator__form-input__half">
-                <Button
-                  className="button"
-                  variant="contained"
-                  color="secondary"
-                >
+                <Button className="button" variant="contained" color="secondary">
                   Clear
                 </Button>
               </div>
               <div className="calculator__form-input__half">
-                <Button
-                  className="button"
-                  variant="contained"
-                  color="primary"
-                >
+                <Button className="button" variant="contained" color="primary">
                   Go
                 </Button>
               </div>
