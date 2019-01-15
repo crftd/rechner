@@ -21,6 +21,11 @@
     "deploy:minor": "yarn version --minor && git push --follow-tags",
     "deploy:patch": "yarn version --patch && git push --follow-tags"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
