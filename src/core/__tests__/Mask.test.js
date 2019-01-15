@@ -1,4 +1,5 @@
 import Mask from '../Mask';
+import IP from '../IP';
 
 describe('Mask', () => {
   test('constructor - class A', () => {
@@ -8,6 +9,8 @@ describe('Mask', () => {
     // Act
     const actualMask = new Mask(expectedBitAmount);
     // Assert
+    expect(actualMask).toBeInstanceOf(Mask);
+    expect(actualMask).toBeInstanceOf(IP);
     expect(actualMask.bytes).toEqual(expectedBytes);
   });
 
@@ -18,6 +21,8 @@ describe('Mask', () => {
     // Act
     const actualMask = new Mask(expectedBitAmount);
     // Assert
+    expect(actualMask).toBeInstanceOf(Mask);
+    expect(actualMask).toBeInstanceOf(IP);
     expect(actualMask.bytes).toEqual(expectedBytes);
   });
 
@@ -28,6 +33,8 @@ describe('Mask', () => {
     // Act
     const actualMask = new Mask(expectedBitAmount);
     // Assert
+    expect(actualMask).toBeInstanceOf(Mask);
+    expect(actualMask).toBeInstanceOf(IP);
     expect(actualMask.bytes).toEqual(expectedBytes);
   });
 });

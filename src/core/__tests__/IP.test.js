@@ -1,29 +1,41 @@
-import IP from '../IP';
+import IP, { IP_V4_BYTES_LENGTH } from '../IP';
 import { OUT_OF_RANGE_ERROR_MESSAGE } from '../constans';
 
 describe('IP', () => {
-  test('constructor', () => {
-    // Arrange
-    const expectedIp = [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
-    const expectedDecimalIp = '192.168.0.5';
+  describe('constructor', () => {
+    test('constructor - default', () => {
+      // Arrange
+      const expectedBytesLength = IP_V4_BYTES_LENGTH;
+      // Act
+      const actualIp = new IP();
+      // Assert
+      expect(actualIp.bytes).toBeInstanceOf(Array);
+      expect(actualIp.bytes.length).toEqual(expectedBytesLength);
+    });
 
-    // Act
-    const actualIp = new IP(expectedDecimalIp);
+    test('constructor - 192.168.0.5', () => {
+      // Arrange
+      const expectedIp = [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
+      const expectedDecimalIp = '192.168.0.5';
 
-    // Assert
-    expect(actualIp.bytes).toEqual(expectedIp);
-  });
+      // Act
+      const actualIp = new IP(expectedDecimalIp);
 
-  test('constructor', () => {
-    // Arrange
-    const expectedIp = [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0];
-    const expectedDecimalIp = '192.168.0.6';
+      // Assert
+      expect(actualIp.bytes).toEqual(expectedIp);
+    });
 
-    // Act
-    const actualIp = new IP(expectedDecimalIp);
+    test('constructor - 192.168.0.6', () => {
+      // Arrange
+      const expectedIp = [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0];
+      const expectedDecimalIp = '192.168.0.6';
 
-    // Assert
-    expect(actualIp.bytes).toEqual(expectedIp);
+      // Act
+      const actualIp = new IP(expectedDecimalIp);
+
+      // Assert
+      expect(actualIp.bytes).toEqual(expectedIp);
+    });
   });
 
   describe('convertToOctet', () => {

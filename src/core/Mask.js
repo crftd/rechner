@@ -1,8 +1,9 @@
-const IP_V4_LENGTH = 32;
+import IP, { IP_V4_BYTES_LENGTH } from './IP';
 
-export default class Mask {
+export default class Mask extends IP {
   constructor(bitAmount) {
-    this.bytes = new Array(IP_V4_LENGTH);
-    this.bytes.fill(1, 0, bitAmount).fill(0, bitAmount, IP_V4_LENGTH);
+    super();
+    this.bytes = new Array(IP_V4_BYTES_LENGTH);
+    this.bytes.fill(1, 0, bitAmount).fill(0, bitAmount, IP_V4_BYTES_LENGTH);
   }
 }

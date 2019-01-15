@@ -1,9 +1,14 @@
 import { OUT_OF_RANGE_ERROR_MESSAGE } from './constans';
 
 const DIGIT_AMOUNT = 8;
+export const IP_V4_BYTES_LENGTH = 32;
 
 export default class IP {
   constructor(decimalIp) {
+    if (!decimalIp) {
+      this.bytes = new Array(IP_V4_BYTES_LENGTH);
+      return;
+    }
     this.bytes = [];
     const match = decimalIp.match(/\d+/gm);
     for (let i = 0; i < match.length; i += 1) {
