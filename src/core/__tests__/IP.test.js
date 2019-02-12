@@ -1,5 +1,6 @@
 import IP, { IP_V4_BYTES_LENGTH } from '../IP';
 import { OUT_OF_RANGE_ERROR_MESSAGE } from '../constans';
+import Mask from '../Mask';
 
 describe('IP', () => {
   describe('constructor', () => {
@@ -81,6 +82,30 @@ describe('IP', () => {
       }
       // Assert
       expect(convertToOctetOutOfRange).toThrow(expectedErrorMessage);
+    });
+  });
+
+  describe('calcFirstAvailable', () => {
+    test('calcFirstAvailable - 192.145.23.16/24', () => {
+      // Arrange
+      const expectedFirstAvailable = new IP('192.145.23.1');
+      const expectedMask = new Mask(24);
+      const ip = new IP('192.145.23.16');
+      // Act
+      const actualFirstAvailable = ip.calcFirstAvailable(expectedMask);
+      // Assert
+      expect(actualFirstAvailable).toEqual(expectedFirstAvailable);
+    });
+
+    test('calcFirstAvailable - 223.145.23.16/12', () => {
+      // Arrange
+      const expectedFirstAvailable = new IP('223.144.0.1');
+      const expectedMask = new Mask(12);
+      const ip = new IP('223.145.23.16');
+      // Act
+      const actualFirstAvailable = ip.calcFirstAvailable(expectedMask);
+      // Assert
+      expect(actualFirstAvailable).toEqual(expectedFirstAvailable);
     });
   });
 });

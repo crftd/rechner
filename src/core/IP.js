@@ -29,4 +29,13 @@ export default class IP {
 
     return binary;
   }
+
+  calcFirstAvailable(mask) {
+    const firstAvailable = new IP();
+    for (let i = 0; i < IP_V4_BYTES_LENGTH; i += 1) {
+      firstAvailable.bytes[i] = this.bytes[i] * mask.bytes[i];
+    }
+    firstAvailable.bytes[IP_V4_BYTES_LENGTH - 1] = 1;
+    return firstAvailable;
+  }
 }
