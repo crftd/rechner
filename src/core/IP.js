@@ -38,4 +38,17 @@ export default class IP {
     firstAvailable.bytes[IP_V4_BYTES_LENGTH - 1] = 1;
     return firstAvailable;
   }
+
+  calcLatestAvailable(mask) {
+    const latestAvailable = new IP();
+    for (let i = 0; i < IP_V4_BYTES_LENGTH; i += 1) {
+      if (mask.bytes[i] === 0) {
+        latestAvailable.bytes[i] = 1;
+      } else {
+        latestAvailable.bytes[i] = this.bytes[i] * mask.bytes[i];
+      }
+    }
+    latestAvailable.bytes[IP_V4_BYTES_LENGTH - 1] = 0;
+    return latestAvailable;
+  }
 }

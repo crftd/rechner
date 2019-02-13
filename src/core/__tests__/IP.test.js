@@ -108,4 +108,28 @@ describe('IP', () => {
       expect(actualFirstAvailable).toEqual(expectedFirstAvailable);
     });
   });
+
+  describe('calcLastAvailable', () => {
+    test('calcLatestAvailable - 192.145.23.16/24', () => {
+      // Arrange
+      const expectedLatestAvailable = new IP('192.145.23.254');
+      const expectedMask = new Mask(24);
+      const ip = new IP('192.145.23.16');
+      // Act
+      const actualLatestAvailable = ip.calcLatestAvailable(expectedMask);
+      // Assert
+      expect(actualLatestAvailable).toEqual(expectedLatestAvailable);
+    });
+
+    test('calcLatestAvailable - 223.145.23.16/12', () => {
+      // Arrange
+      const expectedLatestAvailable = new IP('223.159.255.254');
+      const expectedMask = new Mask(12);
+      const ip = new IP('223.145.23.16');
+      // Act
+      const actualLatestAvailable = ip.calcLatestAvailable(expectedMask);
+      // Assert
+      expect(actualLatestAvailable).toEqual(expectedLatestAvailable);
+    });
+  });
 });
